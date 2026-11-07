@@ -1,0 +1,24 @@
+[
+  {
+    "mode": "platform",
+    "url": "http://127.0.0.1:8080/work/platform?delayMs=5000",
+    "status": 200,
+    "body": {
+      "delayMs": 5000,
+      "thread": "platform-worker-13",
+      "virtual": false
+    },
+    "elapsed_seconds": 5.0395621999923605
+  },
+  {
+    "mode": "virtual",
+    "url": "http://127.0.0.1:8080/work/virtual?delayMs=5000",
+    "status": 200,
+    "body": {
+      "delayMs": 5000,
+      "thread": "virtual-worker-4098",
+      "virtual": true
+    },
+    "elapsed_seconds": 5.039249099994777
+  }
+]

@@ -1,0 +1,592 @@
+{
+  "started_utc": "2026-11-07T08:13:28.525204+00:00",
+  "started_epoch": 1794039208.5252042,
+  "client_environment": "Windows-11-10.0.26200-SP0",
+  "results": [
+    {
+      "phase": "baseline",
+      "mode": "platform",
+      "uri": "/work/platform",
+      "concurrency": 64,
+      "delay_ms": 500,
+      "warmup_seconds": 6,
+      "target_window_seconds": 10,
+      "actual_window_seconds": 10.00146354996832,
+      "first": {
+        "url": "http://127.0.0.1:8080/actuator/metrics/http.server.requests?tag=uri%3A%2Fwork%2Fplatform&tag=method%3AGET",
+        "utc": "2026-11-07T08:13:35.147936+00:00",
+        "epoch": 1794039215.1479359,
+        "monotonic_midpoint": 229375.23354415002,
+        "read_duration_seconds": 0.023608499992405996,
+        "count": 177.0,
+        "total_time_seconds": 311.4882856,
+        "raw": {
+          "name": "http.server.requests",
+          "baseUnit": "seconds",
+          "measurements": [
+            {
+              "statistic": "COUNT",
+              "value": 177.0
+            },
+            {
+              "statistic": "TOTAL_TIME",
+              "value": 311.4882856
+            },
+            {
+              "statistic": "MAX",
+              "value": 2.056141
+            }
+          ],
+          "availableTags": [
+            {
+              "tag": "exception",
+              "values": [
+                "none"
+              ]
+            },
+            {
+              "tag": "application",
+              "values": [
+                "apm-lab"
+              ]
+            },
+            {
+              "tag": "error",
+              "values": [
+                "none"
+              ]
+            },
+            {
+              "tag": "outcome",
+              "values": [
+                "SUCCESS"
+              ]
+            },
+            {
+              "tag": "status",
+              "values": [
+                "200"
+              ]
+            }
+          ]
+        }
+      },
+      "second": {
+        "url": "http://127.0.0.1:8080/actuator/metrics/http.server.requests?tag=uri%3A%2Fwork%2Fplatform&tag=method%3AGET",
+        "utc": "2026-11-07T08:13:45.149388+00:00",
+        "epoch": 1794039225.1493883,
+        "monotonic_midpoint": 229385.2350077,
+        "read_duration_seconds": 0.002223200019216165,
+        "count": 497.0,
+        "total_time_seconds": 965.2933685,
+        "raw": {
+          "name": "http.server.requests",
+          "baseUnit": "seconds",
+          "measurements": [
+            {
+              "statistic": "COUNT",
+              "value": 497.0
+            },
+            {
+              "statistic": "TOTAL_TIME",
+              "value": 965.2933685
+            },
+            {
+              "statistic": "MAX",
+              "value": 2.056141
+            }
+          ],
+          "availableTags": [
+            {
+              "tag": "exception",
+              "values": [
+                "none"
+              ]
+            },
+            {
+              "tag": "application",
+              "values": [
+                "apm-lab"
+              ]
+            },
+            {
+              "tag": "error",
+              "values": [
+                "none"
+              ]
+            },
+            {
+              "tag": "outcome",
+              "values": [
+                "SUCCESS"
+              ]
+            },
+            {
+              "tag": "status",
+              "values": [
+                "200"
+              ]
+            }
+          ]
+        }
+      },
+      "completed_in_window": 320.0,
+      "requests_per_second": 31.995317325434193,
+      "requests_per_second_nominal": 32.0,
+      "server_mean_duration_seconds": 2.0431408840625003,
+      "probe": {
+        "delayMs": 500,
+        "thread": "platform-worker-0",
+        "virtual": false
+      },
+      "client_statuses_entire_phase_including_warmup_and_drain": {
+        "200": 560
+      },
+      "transport_errors": [],
+      "started_epoch": 1794039209.1281378,
+      "finished_epoch": 1794039227.0704222
+    },
+    {
+      "phase": "baseline",
+      "mode": "virtual",
+      "uri": "/work/virtual",
+      "concurrency": 64,
+      "delay_ms": 500,
+      "warmup_seconds": 6,
+      "target_window_seconds": 10,
+      "actual_window_seconds": 10.000961099984124,
+      "first": {
+        "url": "http://127.0.0.1:8080/actuator/metrics/http.server.requests?tag=uri%3A%2Fwork%2Fvirtual&tag=method%3AGET",
+        "utc": "2026-11-07T08:13:56.618646+00:00",
+        "epoch": 1794039236.618646,
+        "monotonic_midpoint": 229396.70422655,
+        "read_duration_seconds": 0.011562300001969561,
+        "count": 705.0,
+        "total_time_seconds": 359.7345297,
+        "raw": {
+          "name": "http.server.requests",
+          "baseUnit": "seconds",
+          "measurements": [
+            {
+              "statistic": "COUNT",
+              "value": 705.0
+            },
+            {
+              "statistic": "TOTAL_TIME",
+              "value": 359.7345297
+            },
+            {
+              "statistic": "MAX",
+              "value": 0.5194449
+            }
+          ],
+          "availableTags": [
+            {
+              "tag": "exception",
+              "values": [
+                "none"
+              ]
+            },
+            {
+              "tag": "application",
+              "values": [
+                "apm-lab"
+              ]
+            },
+            {
+              "tag": "error",
+              "values": [
+                "none"
+              ]
+            },
+            {
+              "tag": "outcome",
+              "values": [
+                "SUCCESS"
+              ]
+            },
+            {
+              "tag": "status",
+              "values": [
+                "200"
+              ]
+            }
+          ]
+        }
+      },
+      "second": {
+        "url": "http://127.0.0.1:8080/actuator/metrics/http.server.requests?tag=uri%3A%2Fwork%2Fvirtual&tag=method%3AGET",
+        "utc": "2026-11-07T08:14:06.619625+00:00",
+        "epoch": 1794039246.619625,
+        "monotonic_midpoint": 229406.70518765,
+        "read_duration_seconds": 0.0018140999891329557,
+        "count": 1985.0,
+        "total_time_seconds": 1014.161286,
+        "raw": {
+          "name": "http.server.requests",
+          "baseUnit": "seconds",
+          "measurements": [
+            {
+              "statistic": "COUNT",
+              "value": 1985.0
+            },
+            {
+              "statistic": "TOTAL_TIME",
+              "value": 1014.161286
+            },
+            {
+              "statistic": "MAX",
+              "value": 0.5194449
+            }
+          ],
+          "availableTags": [
+            {
+              "tag": "exception",
+              "values": [
+                "none"
+              ]
+            },
+            {
+              "tag": "application",
+              "values": [
+                "apm-lab"
+              ]
+            },
+            {
+              "tag": "error",
+              "values": [
+                "none"
+              ]
+            },
+            {
+              "tag": "outcome",
+              "values": [
+                "SUCCESS"
+              ]
+            },
+            {
+              "tag": "status",
+              "values": [
+                "200"
+              ]
+            }
+          ]
+        }
+      },
+      "completed_in_window": 1280.0,
+      "requests_per_second": 127.98769910244245,
+      "requests_per_second_nominal": 128.0,
+      "server_mean_duration_seconds": 0.5112709033593751,
+      "probe": {
+        "delayMs": 500,
+        "thread": "virtual-worker-0",
+        "virtual": true
+      },
+      "client_statuses_entire_phase_including_warmup_and_drain": {
+        "200": 2048
+      },
+      "transport_errors": [],
+      "started_epoch": 1794039230.6043012,
+      "finished_epoch": 1794039247.0595798
+    },
+    {
+      "phase": "errors",
+      "mode": "platform",
+      "uri": "/work/platform",
+      "concurrency": 64,
+      "delay_ms": 500,
+      "warmup_seconds": 6,
+      "target_window_seconds": 10,
+      "actual_window_seconds": 10.009126799996011,
+      "first": {
+        "url": "http://127.0.0.1:8080/actuator/metrics/http.server.requests?tag=uri%3A%2Fwork%2Fplatform&tag=method%3AGET",
+        "utc": "2026-11-07T08:14:16.618126+00:00",
+        "epoch": 1794039256.6181264,
+        "monotonic_midpoint": 229416.7037315,
+        "read_duration_seconds": 0.027176600007805973,
+        "count": 738.0,
+        "total_time_seconds": 1406.4361793,
+        "raw": {
+          "name": "http.server.requests",
+          "baseUnit": "seconds",
+          "measurements": [
+            {
+              "statistic": "COUNT",
+              "value": 738.0
+            },
+            {
+              "statistic": "TOTAL_TIME",
+              "value": 1406.4361793
+            },
+            {
+              "statistic": "MAX",
+              "value": 2.056141
+            }
+          ],
+          "availableTags": [
+            {
+              "tag": "exception",
+              "values": [
+                "none"
+              ]
+            },
+            {
+              "tag": "application",
+              "values": [
+                "apm-lab"
+              ]
+            },
+            {
+              "tag": "error",
+              "values": [
+                "none"
+              ]
+            },
+            {
+              "tag": "outcome",
+              "values": [
+                "SERVER_ERROR",
+                "SUCCESS"
+              ]
+            },
+            {
+              "tag": "status",
+              "values": [
+                "503",
+                "200"
+              ]
+            }
+          ]
+        }
+      },
+      "second": {
+        "url": "http://127.0.0.1:8080/actuator/metrics/http.server.requests?tag=uri%3A%2Fwork%2Fplatform&tag=method%3AGET",
+        "utc": "2026-11-07T08:14:26.627148+00:00",
+        "epoch": 1794039266.6271482,
+        "monotonic_midpoint": 229426.7128583,
+        "read_duration_seconds": 0.016916599997784942,
+        "count": 1058.0,
+        "total_time_seconds": 2060.6437831,
+        "raw": {
+          "name": "http.server.requests",
+          "baseUnit": "seconds",
+          "measurements": [
+            {
+              "statistic": "COUNT",
+              "value": 1058.0
+            },
+            {
+              "statistic": "TOTAL_TIME",
+              "value": 2060.6437831
+            },
+            {
+              "statistic": "MAX",
+              "value": 2.056141
+            }
+          ],
+          "availableTags": [
+            {
+              "tag": "exception",
+              "values": [
+                "none"
+              ]
+            },
+            {
+              "tag": "application",
+              "values": [
+                "apm-lab"
+              ]
+            },
+            {
+              "tag": "error",
+              "values": [
+                "none"
+              ]
+            },
+            {
+              "tag": "outcome",
+              "values": [
+                "SERVER_ERROR",
+                "SUCCESS"
+              ]
+            },
+            {
+              "tag": "status",
+              "values": [
+                "503",
+                "200"
+              ]
+            }
+          ]
+        }
+      },
+      "completed_in_window": 320.0,
+      "requests_per_second": 31.97082087122001,
+      "requests_per_second_nominal": 32.0,
+      "server_mean_duration_seconds": 2.0443987618749992,
+      "probe": {
+        "delayMs": 500,
+        "thread": "platform-worker-2",
+        "virtual": false
+      },
+      "client_statuses_entire_phase_including_warmup_and_drain": {
+        "503": 55,
+        "200": 505
+      },
+      "transport_errors": [],
+      "started_epoch": 1794039250.5979877,
+      "finished_epoch": 1794039268.5146391
+    },
+    {
+      "phase": "errors",
+      "mode": "virtual",
+      "uri": "/work/virtual",
+      "concurrency": 64,
+      "delay_ms": 500,
+      "warmup_seconds": 6,
+      "target_window_seconds": 10,
+      "actual_window_seconds": 10.001262749981834,
+      "first": {
+        "url": "http://127.0.0.1:8080/actuator/metrics/http.server.requests?tag=uri%3A%2Fwork%2Fvirtual&tag=method%3AGET",
+        "utc": "2026-11-07T08:14:38.034432+00:00",
+        "epoch": 1794039278.0344317,
+        "monotonic_midpoint": 229438.12002555002,
+        "read_duration_seconds": 0.0035556999791879207,
+        "count": 2754.0,
+        "total_time_seconds": 1406.6155589,
+        "raw": {
+          "name": "http.server.requests",
+          "baseUnit": "seconds",
+          "measurements": [
+            {
+              "statistic": "COUNT",
+              "value": 2754.0
+            },
+            {
+              "statistic": "TOTAL_TIME",
+              "value": 1406.6155589
+            },
+            {
+              "statistic": "MAX",
+              "value": 0.5194449
+            }
+          ],
+          "availableTags": [
+            {
+              "tag": "exception",
+              "values": [
+                "none"
+              ]
+            },
+            {
+              "tag": "application",
+              "values": [
+                "apm-lab"
+              ]
+            },
+            {
+              "tag": "error",
+              "values": [
+                "none"
+              ]
+            },
+            {
+              "tag": "outcome",
+              "values": [
+                "SUCCESS",
+                "SERVER_ERROR"
+              ]
+            },
+            {
+              "tag": "status",
+              "values": [
+                "503",
+                "200"
+              ]
+            }
+          ]
+        }
+      },
+      "second": {
+        "url": "http://127.0.0.1:8080/actuator/metrics/http.server.requests?tag=uri%3A%2Fwork%2Fvirtual&tag=method%3AGET",
+        "utc": "2026-11-07T08:14:48.035719+00:00",
+        "epoch": 1794039288.0357194,
+        "monotonic_midpoint": 229448.1212883,
+        "read_duration_seconds": 0.001642199989873916,
+        "count": 4034.0,
+        "total_time_seconds": 2060.1552105,
+        "raw": {
+          "name": "http.server.requests",
+          "baseUnit": "seconds",
+          "measurements": [
+            {
+              "statistic": "COUNT",
+              "value": 4034.0
+            },
+            {
+              "statistic": "TOTAL_TIME",
+              "value": 2060.1552105
+            },
+            {
+              "statistic": "MAX",
+              "value": 0.5194449
+            }
+          ],
+          "availableTags": [
+            {
+              "tag": "exception",
+              "values": [
+                "none"
+              ]
+            },
+            {
+              "tag": "application",
+              "values": [
+                "apm-lab"
+              ]
+            },
+            {
+              "tag": "error",
+              "values": [
+                "none"
+              ]
+            },
+            {
+              "tag": "outcome",
+              "values": [
+                "SUCCESS",
+                "SERVER_ERROR"
+              ]
+            },
+            {
+              "tag": "status",
+              "values": [
+                "503",
+                "200"
+              ]
+            }
+          ]
+        }
+      },
+      "completed_in_window": 1280.0,
+      "requests_per_second": 127.98383884098286,
+      "requests_per_second_nominal": 128.0,
+      "server_mean_duration_seconds": 0.5105778528125,
+      "probe": {
+        "delayMs": 500,
+        "thread": "virtual-worker-2049",
+        "virtual": true
+      },
+      "client_statuses_entire_phase_including_warmup_and_drain": {
+        "503": 205,
+        "200": 1843
+      },
+      "transport_errors": [],
+      "started_epoch": 1794039272.0227969,
+      "finished_epoch": 1794039288.5042608
+    }
+  ],
+  "finished_utc": "2026-11-07T08:14:51.507433+00:00",
+  "finished_epoch": 1794039291.5074334,
+  "grafana_url": "http://127.0.0.1:3000/d/apm-red?from=1794039203525&to=1794039296507&refresh="
+}

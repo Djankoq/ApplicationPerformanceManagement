@@ -1,0 +1,10 @@
+apiVersion: 1
+providers:
+  - name: APM lab
+    orgId: 1
+    folder: APM
+    type: file
+    disableDeletion: false
+    editable: false
+    options:
+      path: ${GRAFANA_DASHBOARDS_PATH}
