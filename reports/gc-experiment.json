@@ -1,0 +1,993 @@
+{
+  "started_utc": "2026-11-14T08:48:07.259534+00:00",
+  "finished_utc": "2026-11-14T08:49:38.842276+00:00",
+  "java_version": "java version \"21.0.1\" 2023-10-17 LTS\nJava(TM) SE Runtime Environment (build 21.0.1+12-LTS-29)\nJava HotSpot(TM) 64-Bit Server VM (build 21.0.1+12-LTS-29, mixed mode, sharing)\n",
+  "command": [
+    "C:\\Program Files\\Java\\jdk-21\\bin\\java.exe",
+    "-Xms128m",
+    "-Xmx128m",
+    "-XX:+UseG1GC",
+    "-XX:+ExitOnOutOfMemoryError",
+    "-Xlog:gc*,safepoint:file=gc.log:time,uptime,level,tags:filecount=0",
+    "-jar",
+    "C:\\Users\\kurap\\IdeaProjects\\ApplicationPerformanceManagement\\target\\apm-lab.jar",
+    "--spring.profiles.active=gc-leak",
+    "--server.address=127.0.0.1",
+    "--server.port=18080",
+    "--gc.leak.metrics=heap.csv"
+  ],
+  "cwd": "C:\\Users\\kurap\\IdeaProjects\\ApplicationPerformanceManagement\\reports",
+  "pid": 34368,
+  "wall_seconds": 91.56199999999808,
+  "sampled_load_seconds": 88.01,
+  "exit_code": 3,
+  "timed_out": false,
+  "heap_oom": true,
+  "expected_outcome_observed": true,
+  "allocation": {
+    "block_bytes": 131072,
+    "sleep_ms": 100,
+    "nominal_mib_per_second": 1.25
+  },
+  "samples": [
+    {
+      "uptime_seconds": 2.232,
+      "retained_blocks": 0,
+      "retained_bytes": 0,
+      "heap_used_bytes": 22795616,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 3.21,
+      "retained_blocks": 10,
+      "retained_bytes": 1310720,
+      "heap_used_bytes": 23844192,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 4.302,
+      "retained_blocks": 20,
+      "retained_bytes": 2621440,
+      "heap_used_bytes": 24892768,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 5.383,
+      "retained_blocks": 30,
+      "retained_bytes": 3932160,
+      "heap_used_bytes": 26989920,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 6.464,
+      "retained_blocks": 40,
+      "retained_bytes": 5242880,
+      "heap_used_bytes": 28038496,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 7.559,
+      "retained_blocks": 50,
+      "retained_bytes": 6553600,
+      "heap_used_bytes": 29087072,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 8.649,
+      "retained_blocks": 60,
+      "retained_bytes": 7864320,
+      "heap_used_bytes": 31184224,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 9.734,
+      "retained_blocks": 70,
+      "retained_bytes": 9175040,
+      "heap_used_bytes": 32232800,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 10.814,
+      "retained_blocks": 80,
+      "retained_bytes": 10485760,
+      "heap_used_bytes": 34329952,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 11.895,
+      "retained_blocks": 90,
+      "retained_bytes": 11796480,
+      "heap_used_bytes": 35378528,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 12.983,
+      "retained_blocks": 100,
+      "retained_bytes": 13107200,
+      "heap_used_bytes": 37475680,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 14.065,
+      "retained_blocks": 110,
+      "retained_bytes": 14417920,
+      "heap_used_bytes": 38524256,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 15.154,
+      "retained_blocks": 120,
+      "retained_bytes": 15728640,
+      "heap_used_bytes": 39572832,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 16.239,
+      "retained_blocks": 130,
+      "retained_bytes": 17039360,
+      "heap_used_bytes": 41669984,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 17.327,
+      "retained_blocks": 140,
+      "retained_bytes": 18350080,
+      "heap_used_bytes": 42718560,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 18.414,
+      "retained_blocks": 150,
+      "retained_bytes": 19660800,
+      "heap_used_bytes": 44815712,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 19.502,
+      "retained_blocks": 160,
+      "retained_bytes": 20971520,
+      "heap_used_bytes": 45864288,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 20.589,
+      "retained_blocks": 170,
+      "retained_bytes": 22282240,
+      "heap_used_bytes": 47961440,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 21.67,
+      "retained_blocks": 180,
+      "retained_bytes": 23592960,
+      "heap_used_bytes": 49010016,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 22.756,
+      "retained_blocks": 190,
+      "retained_bytes": 24903680,
+      "heap_used_bytes": 50058592,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 23.844,
+      "retained_blocks": 200,
+      "retained_bytes": 26214400,
+      "heap_used_bytes": 52155744,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 24.933,
+      "retained_blocks": 210,
+      "retained_bytes": 27525120,
+      "heap_used_bytes": 53204320,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 26.019,
+      "retained_blocks": 220,
+      "retained_bytes": 28835840,
+      "heap_used_bytes": 55301472,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 27.112,
+      "retained_blocks": 230,
+      "retained_bytes": 30146560,
+      "heap_used_bytes": 56350048,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 28.205,
+      "retained_blocks": 240,
+      "retained_bytes": 31457280,
+      "heap_used_bytes": 58447200,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 29.298,
+      "retained_blocks": 250,
+      "retained_bytes": 32768000,
+      "heap_used_bytes": 59495776,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 30.383,
+      "retained_blocks": 260,
+      "retained_bytes": 34078720,
+      "heap_used_bytes": 60544352,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 31.458,
+      "retained_blocks": 270,
+      "retained_bytes": 35389440,
+      "heap_used_bytes": 62641504,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 32.53,
+      "retained_blocks": 280,
+      "retained_bytes": 36700160,
+      "heap_used_bytes": 63690080,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 33.603,
+      "retained_blocks": 290,
+      "retained_bytes": 38010880,
+      "heap_used_bytes": 65787232,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 34.683,
+      "retained_blocks": 300,
+      "retained_bytes": 39321600,
+      "heap_used_bytes": 66835808,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 35.764,
+      "retained_blocks": 310,
+      "retained_bytes": 40632320,
+      "heap_used_bytes": 68932960,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 36.854,
+      "retained_blocks": 320,
+      "retained_bytes": 41943040,
+      "heap_used_bytes": 69981536,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 37.939,
+      "retained_blocks": 330,
+      "retained_bytes": 43253760,
+      "heap_used_bytes": 71030112,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 39.032,
+      "retained_blocks": 340,
+      "retained_bytes": 44564480,
+      "heap_used_bytes": 73127264,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 40.119,
+      "retained_blocks": 350,
+      "retained_bytes": 45875200,
+      "heap_used_bytes": 74175840,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 41.212,
+      "retained_blocks": 360,
+      "retained_bytes": 47185920,
+      "heap_used_bytes": 76272992,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 42.293,
+      "retained_blocks": 370,
+      "retained_bytes": 48496640,
+      "heap_used_bytes": 77321568,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 43.37,
+      "retained_blocks": 380,
+      "retained_bytes": 49807360,
+      "heap_used_bytes": 79418720,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 44.45,
+      "retained_blocks": 390,
+      "retained_bytes": 51118080,
+      "heap_used_bytes": 80467296,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 45.538,
+      "retained_blocks": 400,
+      "retained_bytes": 52428800,
+      "heap_used_bytes": 81515872,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 46.628,
+      "retained_blocks": 410,
+      "retained_bytes": 53739520,
+      "heap_used_bytes": 83613024,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 47.715,
+      "retained_blocks": 420,
+      "retained_bytes": 55050240,
+      "heap_used_bytes": 84661600,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 48.802,
+      "retained_blocks": 430,
+      "retained_bytes": 56360960,
+      "heap_used_bytes": 86758752,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 49.894,
+      "retained_blocks": 440,
+      "retained_bytes": 57671680,
+      "heap_used_bytes": 87807328,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 50.984,
+      "retained_blocks": 450,
+      "retained_bytes": 58982400,
+      "heap_used_bytes": 91226112,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 52.072,
+      "retained_blocks": 460,
+      "retained_bytes": 60293120,
+      "heap_used_bytes": 92274688,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 53.166,
+      "retained_blocks": 470,
+      "retained_bytes": 61603840,
+      "heap_used_bytes": 93323264,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 54.256,
+      "retained_blocks": 480,
+      "retained_bytes": 62914560,
+      "heap_used_bytes": 95420416,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 55.346,
+      "retained_blocks": 490,
+      "retained_bytes": 64225280,
+      "heap_used_bytes": 96468992,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 56.431,
+      "retained_blocks": 500,
+      "retained_bytes": 65536000,
+      "heap_used_bytes": 97517568,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 57.519,
+      "retained_blocks": 510,
+      "retained_bytes": 66846720,
+      "heap_used_bytes": 99614720,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 58.609,
+      "retained_blocks": 520,
+      "retained_bytes": 68157440,
+      "heap_used_bytes": 100663296,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 59.703,
+      "retained_blocks": 530,
+      "retained_bytes": 69468160,
+      "heap_used_bytes": 102760448,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 60.788,
+      "retained_blocks": 540,
+      "retained_bytes": 70778880,
+      "heap_used_bytes": 103809024,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 61.872,
+      "retained_blocks": 550,
+      "retained_bytes": 72089600,
+      "heap_used_bytes": 105906176,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 62.961,
+      "retained_blocks": 560,
+      "retained_bytes": 73400320,
+      "heap_used_bytes": 106954752,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 64.046,
+      "retained_blocks": 570,
+      "retained_bytes": 74711040,
+      "heap_used_bytes": 108003328,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 65.133,
+      "retained_blocks": 580,
+      "retained_bytes": 76021760,
+      "heap_used_bytes": 110100480,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 66.226,
+      "retained_blocks": 590,
+      "retained_bytes": 77332480,
+      "heap_used_bytes": 111149056,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 67.317,
+      "retained_blocks": 600,
+      "retained_bytes": 78643200,
+      "heap_used_bytes": 113246208,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 68.403,
+      "retained_blocks": 610,
+      "retained_bytes": 79953920,
+      "heap_used_bytes": 114294784,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 69.494,
+      "retained_blocks": 620,
+      "retained_bytes": 81264640,
+      "heap_used_bytes": 122871304,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 70.582,
+      "retained_blocks": 630,
+      "retained_bytes": 82575360,
+      "heap_used_bytes": 122871304,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 71.671,
+      "retained_blocks": 640,
+      "retained_bytes": 83886080,
+      "heap_used_bytes": 124968456,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 72.759,
+      "retained_blocks": 650,
+      "retained_bytes": 85196800,
+      "heap_used_bytes": 126017032,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 73.85,
+      "retained_blocks": 660,
+      "retained_bytes": 86507520,
+      "heap_used_bytes": 129761504,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 74.939,
+      "retained_blocks": 670,
+      "retained_bytes": 87818240,
+      "heap_used_bytes": 130810080,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 76.06,
+      "retained_blocks": 680,
+      "retained_bytes": 89128960,
+      "heap_used_bytes": 101295104,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 77.147,
+      "retained_blocks": 690,
+      "retained_bytes": 90439680,
+      "heap_used_bytes": 102343680,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 78.234,
+      "retained_blocks": 700,
+      "retained_bytes": 91750400,
+      "heap_used_bytes": 104440832,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 79.325,
+      "retained_blocks": 710,
+      "retained_bytes": 93061120,
+      "heap_used_bytes": 105489408,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 80.416,
+      "retained_blocks": 720,
+      "retained_bytes": 94371840,
+      "heap_used_bytes": 106537984,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 81.5,
+      "retained_blocks": 730,
+      "retained_bytes": 95682560,
+      "heap_used_bytes": 108373088,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 82.592,
+      "retained_blocks": 740,
+      "retained_bytes": 96993280,
+      "heap_used_bytes": 109421664,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 83.681,
+      "retained_blocks": 750,
+      "retained_bytes": 98304000,
+      "heap_used_bytes": 111518816,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 84.773,
+      "retained_blocks": 760,
+      "retained_bytes": 99614720,
+      "heap_used_bytes": 113484880,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 85.863,
+      "retained_blocks": 770,
+      "retained_bytes": 100925440,
+      "heap_used_bytes": 114533456,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 86.952,
+      "retained_blocks": 780,
+      "retained_bytes": 102236160,
+      "heap_used_bytes": 115582032,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 88.054,
+      "retained_blocks": 790,
+      "retained_bytes": 103546880,
+      "heap_used_bytes": 116638848,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 89.148,
+      "retained_blocks": 800,
+      "retained_bytes": 104857600,
+      "heap_used_bytes": 116638848,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    },
+    {
+      "uptime_seconds": 90.242,
+      "retained_blocks": 810,
+      "retained_bytes": 106168320,
+      "heap_used_bytes": 117687424,
+      "heap_committed_bytes": 134217728,
+      "heap_max_bytes": 134217728
+    }
+  ],
+  "gc_pauses": [
+    {
+      "id": 0,
+      "uptime_seconds": 0.276,
+      "kind": "Pause Young (Normal) (G1 Evacuation Pause)",
+      "before_mib": 23,
+      "after_mib": 2,
+      "capacity_mib": 128,
+      "duration_ms": 2.329,
+      "log_line": "[2026-11-14T11:48:07.547+0300][0.276s][info][gc          ] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 23M->2M(128M) 2.329ms"
+    },
+    {
+      "id": 1,
+      "uptime_seconds": 0.581,
+      "kind": "Pause Young (Normal) (G1 Evacuation Pause)",
+      "before_mib": 37,
+      "after_mib": 4,
+      "capacity_mib": 128,
+      "duration_ms": 3.131,
+      "log_line": "[2026-11-14T11:48:07.853+0300][0.581s][info][gc          ] GC(1) Pause Young (Normal) (G1 Evacuation Pause) 37M->4M(128M) 3.131ms"
+    },
+    {
+      "id": 2,
+      "uptime_seconds": 0.918,
+      "kind": "Pause Young (Normal) (G1 Evacuation Pause)",
+      "before_mib": 75,
+      "after_mib": 9,
+      "capacity_mib": 128,
+      "duration_ms": 5.21,
+      "log_line": "[2026-11-14T11:48:08.190+0300][0.918s][info][gc          ] GC(2) Pause Young (Normal) (G1 Evacuation Pause) 75M->9M(128M) 5.210ms"
+    },
+    {
+      "id": 3,
+      "uptime_seconds": 1.096,
+      "kind": "Pause Young (Concurrent Start) (Metadata GC Threshold)",
+      "before_mib": 38,
+      "after_mib": 10,
+      "capacity_mib": 128,
+      "duration_ms": 5.282,
+      "log_line": "[2026-11-14T11:48:08.368+0300][1.096s][info][gc          ] GC(3) Pause Young (Concurrent Start) (Metadata GC Threshold) 38M->10M(128M) 5.282ms"
+    },
+    {
+      "id": 4,
+      "uptime_seconds": 1.1,
+      "kind": "Pause Remark",
+      "before_mib": 11,
+      "after_mib": 11,
+      "capacity_mib": 128,
+      "duration_ms": 1.464,
+      "log_line": "[2026-11-14T11:48:08.371+0300][1.100s][info][gc          ] GC(4) Pause Remark 11M->11M(128M) 1.464ms"
+    },
+    {
+      "id": 4,
+      "uptime_seconds": 1.1,
+      "kind": "Pause Cleanup",
+      "before_mib": 11,
+      "after_mib": 11,
+      "capacity_mib": 128,
+      "duration_ms": 0.043,
+      "log_line": "[2026-11-14T11:48:08.372+0300][1.100s][info][gc          ] GC(4) Pause Cleanup 11M->11M(128M) 0.043ms"
+    },
+    {
+      "id": 5,
+      "uptime_seconds": 1.606,
+      "kind": "Pause Young (Normal) (G1 Evacuation Pause)",
+      "before_mib": 80,
+      "after_mib": 14,
+      "capacity_mib": 128,
+      "duration_ms": 5.475,
+      "log_line": "[2026-11-14T11:48:08.877+0300][1.606s][info][gc          ] GC(5) Pause Young (Normal) (G1 Evacuation Pause) 80M->14M(128M) 5.475ms"
+    },
+    {
+      "id": 6,
+      "uptime_seconds": 2.195,
+      "kind": "Pause Young (Concurrent Start) (Metadata GC Threshold)",
+      "before_mib": 57,
+      "after_mib": 17,
+      "capacity_mib": 128,
+      "duration_ms": 3.005,
+      "log_line": "[2026-11-14T11:48:09.466+0300][2.195s][info][gc          ] GC(6) Pause Young (Concurrent Start) (Metadata GC Threshold) 57M->17M(128M) 3.005ms"
+    },
+    {
+      "id": 7,
+      "uptime_seconds": 2.201,
+      "kind": "Pause Remark",
+      "before_mib": 18,
+      "after_mib": 18,
+      "capacity_mib": 128,
+      "duration_ms": 2.425,
+      "log_line": "[2026-11-14T11:48:09.473+0300][2.201s][info][gc          ] GC(7) Pause Remark 18M->18M(128M) 2.425ms"
+    },
+    {
+      "id": 7,
+      "uptime_seconds": 2.203,
+      "kind": "Pause Cleanup",
+      "before_mib": 18,
+      "after_mib": 18,
+      "capacity_mib": 128,
+      "duration_ms": 0.058,
+      "log_line": "[2026-11-14T11:48:09.475+0300][2.203s][info][gc          ] GC(7) Pause Cleanup 18M->18M(128M) 0.058ms"
+    },
+    {
+      "id": 8,
+      "uptime_seconds": 50.226,
+      "kind": "Pause Young (Prepare Mixed) (G1 Evacuation Pause) (Evacuation Failure)",
+      "before_mib": 85,
+      "after_mib": 86,
+      "capacity_mib": 128,
+      "duration_ms": 4.751,
+      "log_line": "[2026-11-14T11:48:57.494+0300][50.226s][info][gc          ] GC(8) Pause Young (Prepare Mixed) (G1 Evacuation Pause) (Evacuation Failure) 85M->86M(128M) 4.751ms"
+    },
+    {
+      "id": 9,
+      "uptime_seconds": 68.736,
+      "kind": "Pause Young (Mixed) (G1 Evacuation Pause) (Evacuation Failure)",
+      "before_mib": 110,
+      "after_mib": 116,
+      "capacity_mib": 128,
+      "duration_ms": 6.845,
+      "log_line": "[2026-11-14T11:49:16.004+0300][68.736s][info][gc          ] GC(9) Pause Young (Mixed) (G1 Evacuation Pause) (Evacuation Failure) 110M->116M(128M) 6.845ms"
+    },
+    {
+      "id": 10,
+      "uptime_seconds": 69.276,
+      "kind": "Pause Young (Concurrent Start) (G1 Evacuation Pause)",
+      "before_mib": 117,
+      "after_mib": 117,
+      "capacity_mib": 128,
+      "duration_ms": 2.154,
+      "log_line": "[2026-11-14T11:49:16.544+0300][69.276s][info][gc          ] GC(10) Pause Young (Concurrent Start) (G1 Evacuation Pause) 117M->117M(128M) 2.154ms"
+    },
+    {
+      "id": 11,
+      "uptime_seconds": 69.286,
+      "kind": "Pause Remark",
+      "before_mib": 117,
+      "after_mib": 117,
+      "capacity_mib": 128,
+      "duration_ms": 4.217,
+      "log_line": "[2026-11-14T11:49:16.554+0300][69.286s][info][gc          ] GC(11) Pause Remark 117M->117M(128M) 4.217ms"
+    },
+    {
+      "id": 11,
+      "uptime_seconds": 69.291,
+      "kind": "Pause Cleanup",
+      "before_mib": 117,
+      "after_mib": 117,
+      "capacity_mib": 128,
+      "duration_ms": 0.087,
+      "log_line": "[2026-11-14T11:49:16.558+0300][69.291s][info][gc          ] GC(11) Pause Cleanup 117M->117M(128M) 0.087ms"
+    },
+    {
+      "id": 12,
+      "uptime_seconds": 72.98,
+      "kind": "Pause Young (Prepare Mixed) (G1 Evacuation Pause) (Evacuation Failure)",
+      "before_mib": 122,
+      "after_mib": 123,
+      "capacity_mib": 128,
+      "duration_ms": 2.305,
+      "log_line": "[2026-11-14T11:49:20.248+0300][72.980s][info][gc          ] GC(12) Pause Young (Prepare Mixed) (G1 Evacuation Pause) (Evacuation Failure) 122M->123M(128M) 2.305ms"
+    },
+    {
+      "id": 13,
+      "uptime_seconds": 75.27,
+      "kind": "Pause Young (Mixed) (G1 Evacuation Pause) (Evacuation Failure)",
+      "before_mib": 126,
+      "after_mib": 127,
+      "capacity_mib": 128,
+      "duration_ms": 1.319,
+      "log_line": "[2026-11-14T11:49:22.537+0300][75.270s][info][gc          ] GC(13) Pause Young (Mixed) (G1 Evacuation Pause) (Evacuation Failure) 126M->127M(128M) 1.319ms"
+    },
+    {
+      "id": 14,
+      "uptime_seconds": 75.299,
+      "kind": "Pause Full (G1 Compaction Pause)",
+      "before_mib": 127,
+      "after_mib": 96,
+      "capacity_mib": 128,
+      "duration_ms": 29.409,
+      "log_line": "[2026-11-14T11:49:22.566+0300][75.299s][info][gc             ] GC(14) Pause Full (G1 Compaction Pause) 127M->96M(128M) 29.409ms"
+    },
+    {
+      "id": 15,
+      "uptime_seconds": 80.527,
+      "kind": "Pause Young (Concurrent Start) (G1 Evacuation Pause)",
+      "before_mib": 103,
+      "after_mib": 103,
+      "capacity_mib": 128,
+      "duration_ms": 1.114,
+      "log_line": "[2026-11-14T11:49:27.794+0300][80.527s][info][gc             ] GC(15) Pause Young (Concurrent Start) (G1 Evacuation Pause) 103M->103M(128M) 1.114ms"
+    },
+    {
+      "id": 16,
+      "uptime_seconds": 80.533,
+      "kind": "Pause Remark",
+      "before_mib": 103,
+      "after_mib": 103,
+      "capacity_mib": 128,
+      "duration_ms": 2.11,
+      "log_line": "[2026-11-14T11:49:27.800+0300][80.533s][info][gc             ] GC(16) Pause Remark 103M->103M(128M) 2.110ms"
+    },
+    {
+      "id": 16,
+      "uptime_seconds": 80.536,
+      "kind": "Pause Cleanup",
+      "before_mib": 103,
+      "after_mib": 103,
+      "capacity_mib": 128,
+      "duration_ms": 0.107,
+      "log_line": "[2026-11-14T11:49:27.802+0300][80.536s][info][gc             ] GC(16) Pause Cleanup 103M->103M(128M) 0.107ms"
+    },
+    {
+      "id": 17,
+      "uptime_seconds": 84.23,
+      "kind": "Pause Young (Prepare Mixed) (G1 Evacuation Pause)",
+      "before_mib": 108,
+      "after_mib": 108,
+      "capacity_mib": 128,
+      "duration_ms": 1.777,
+      "log_line": "[2026-11-14T11:49:31.496+0300][84.230s][info][gc             ] GC(17) Pause Young (Prepare Mixed) (G1 Evacuation Pause) 108M->108M(128M) 1.777ms"
+    },
+    {
+      "id": 18,
+      "uptime_seconds": 88.043,
+      "kind": "Pause Young (Mixed) (G1 Evacuation Pause) (Evacuation Failure)",
+      "before_mib": 113,
+      "after_mib": 115,
+      "capacity_mib": 128,
+      "duration_ms": 0.602,
+      "log_line": "[2026-11-14T11:49:35.310+0300][88.043s][info][gc             ] GC(18) Pause Young (Mixed) (G1 Evacuation Pause) (Evacuation Failure) 113M->115M(128M) 0.602ms"
+    },
+    {
+      "id": 19,
+      "uptime_seconds": 88.054,
+      "kind": "Pause Full (G1 Compaction Pause)",
+      "before_mib": 115,
+      "after_mib": 111,
+      "capacity_mib": 128,
+      "duration_ms": 10.779,
+      "log_line": "[2026-11-14T11:49:35.321+0300][88.054s][info][gc             ] GC(19) Pause Full (G1 Compaction Pause) 115M->111M(128M) 10.779ms"
+    },
+    {
+      "id": 20,
+      "uptime_seconds": 90.351,
+      "kind": "Pause Young (Concurrent Start) (G1 Evacuation Pause) (Evacuation Failure)",
+      "before_mib": 114,
+      "after_mib": 114,
+      "capacity_mib": 128,
+      "duration_ms": 1.319,
+      "log_line": "[2026-11-14T11:49:37.617+0300][90.351s][info][gc             ] GC(20) Pause Young (Concurrent Start) (G1 Evacuation Pause) (Evacuation Failure) 114M->114M(128M) 1.319ms"
+    },
+    {
+      "id": 22,
+      "uptime_seconds": 90.363,
+      "kind": "Pause Full (G1 Compaction Pause)",
+      "before_mib": 114,
+      "after_mib": 113,
+      "capacity_mib": 128,
+      "duration_ms": 11.462,
+      "log_line": "[2026-11-14T11:49:37.629+0300][90.363s][info][gc             ] GC(22) Pause Full (G1 Compaction Pause) 114M->113M(128M) 11.462ms"
+    },
+    {
+      "id": 23,
+      "uptime_seconds": 90.376,
+      "kind": "Pause Full (G1 Compaction Pause)",
+      "before_mib": 113,
+      "after_mib": 113,
+      "capacity_mib": 128,
+      "duration_ms": 13.372,
+      "log_line": "[2026-11-14T11:49:37.642+0300][90.376s][info][gc             ] GC(23) Pause Full (G1 Compaction Pause) 113M->113M(128M) 13.372ms"
+    },
+    {
+      "id": 24,
+      "uptime_seconds": 91.035,
+      "kind": "Pause Young (Normal) (G1 Evacuation Pause) (Evacuation Failure)",
+      "before_mib": 114,
+      "after_mib": 114,
+      "capacity_mib": 128,
+      "duration_ms": 0.552,
+      "log_line": "[2026-11-14T11:49:38.300+0300][91.035s][info][gc             ] GC(24) Pause Young (Normal) (G1 Evacuation Pause) (Evacuation Failure) 114M->114M(128M) 0.552ms"
+    },
+    {
+      "id": 25,
+      "uptime_seconds": 91.044,
+      "kind": "Pause Full (G1 Compaction Pause)",
+      "before_mib": 114,
+      "after_mib": 114,
+      "capacity_mib": 128,
+      "duration_ms": 9.154,
+      "log_line": "[2026-11-14T11:49:38.310+0300][91.044s][info][gc             ] GC(25) Pause Full (G1 Compaction Pause) 114M->114M(128M) 9.154ms"
+    },
+    {
+      "id": 26,
+      "uptime_seconds": 91.056,
+      "kind": "Pause Full (G1 Compaction Pause)",
+      "before_mib": 114,
+      "after_mib": 114,
+      "capacity_mib": 128,
+      "duration_ms": 11.868,
+      "log_line": "[2026-11-14T11:49:38.322+0300][91.056s][info][gc             ] GC(26) Pause Full (G1 Compaction Pause) 114M->114M(128M) 11.868ms"
+    }
+  ],
+  "full_gc_count": 6
+}

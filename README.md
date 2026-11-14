@@ -68,6 +68,76 @@ Grafana автоматически получает источник данны�
 `monitoring/grafana`; доступ к просмотру локального учебного стенда анонимный.
 Все опубликованные порты ограничены loopback.
 
+## Пользовательские сценарии JMeter
+
+План [jmeter/api-users.jmx](jmeter/api-users.jmx) использует два существующих
+GET-сценария. В этом API нет сущностей и операций POST/PUT, поэтому сценарии
+записи не добавлены. Каждый пользователь последовательно вызывает
+`/work/platform` и `/work/virtual`, затем повторяет цикл.
+
+| Настройка | Значение по умолчанию |
+| --- | --- |
+| Thread Group | 10 пользователей, 10 циклов, всего 200 запросов |
+| Ramp-up | 20 секунд: новый пользователь примерно каждые 2 секунды |
+| Пауза перед каждым запросом | Uniform Random Timer: 500–1500 мс |
+| Входные данные | [api-delays.csv](jmeter/api-delays.csv): 20 пар `delayMs` в диапазоне 100–1500 мс |
+| HTTP-проверка | Статус строго `200`, перенаправления не скрываются |
+| JSON-проверки | `delayMs` совпадает с входом; `virtual` равен `false`/`true`; `thread` соответствует `platform-worker-N`/`virtual-worker-N` |
+
+CSV Data Set Config читает заголовки как имена переменных, выдаёт следующую строку
+на каждый цикл и разделяет файл между всеми потоками (`All threads`). После
+20 строк чтение начинается заново. Параметры отличаются между пользователями
+и циклами; HTTP Cache Manager отсутствует, поэтому JMeter отправляет каждый
+запрос на сервер. Keep-Alive включён. `fail=false`: это сценарии успешной работы,
+не отдельный эксперимент с ошибками. Данные и паузы моделируют разнообразие
+вызовов учебного I/O API; это не профиль реальной аудитории, полученный из логов.
+
+Нужны запущенное приложение (см. выше), JDK 21+ и
+[Apache JMeter 5.6.3](https://jmeter.apache.org/download_jmeter.cgi).
+Проверьте SHA-512 скачанного ZIP по ссылке Apache и распакуйте его в `.tools`,
+чтобы появился `.tools/apache-jmeter-5.6.3/bin/jmeter.bat`. Альтернатива — задать
+`JMETER_HOME` или передать `-JMeterHome 'C:/tools/apache-jmeter-5.6.3'`.
+Дополнительные плагины JMeter не нужны; Prometheus и Grafana необязательны.
+
+Из корня проекта, обычный прогон и короткая проверка:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/run-jmeter.ps1
+powershell -ExecutionPolicy Bypass -File scripts/run-jmeter.ps1 -Threads 3 -RampUpSeconds 3 -Loops 3 -ThinkTimeMs 100 -ThinkTimeRangeMs 200
+```
+
+Скрипт запускает JMeter в CLI, сохраняет `results.jtl`, `jmeter.log` и
+`html/index.html` в отдельном каталоге `reports/jmeter/<время>/` на каждый прогон.
+JTL включает URL, число активных потоков, CSV-параметры и результат проверок (`success`).
+В HTML доступны доля ошибок, throughput, среднее время и перцентили по каждому
+сценарию. Скрипт завершается ошибкой при провале запросов/assertions либо неполном
+числе результатов, даже если сам JMeter вернул код 0. Генерируемые файлы исключены
+из Git. Сервер задаётся через `-TargetHost`, `-Port`, `-Protocol`.
+
+План также можно открыть в GUI: `jmeter.bat -t jmeter/api-users.jmx`.
+Относительный путь `api-delays.csv` разрешается относительно JMX; в скрипте
+передаётся абсолютный путь. Для отладки можно временно добавить View Results Tree.
+Нагрузочные прогоны выполняйте в CLI. Пример прямого запуска из корня проекта
+в новый каталог результатов (JMeter должен быть в `PATH`):
+
+```powershell
+$run = "reports/jmeter/manual-$(Get-Date -Format 'yyyyMMdd-HHmmss-fff')"
+New-Item -ItemType Directory -Path $run -Force | Out-Null
+jmeter.bat -n -t jmeter/api-users.jmx -Jthreads=10 -JrampUp=20 -Jloops=10 -l "$run/results.jtl" -j "$run/jmeter.log" -e -o "$run/html"
+```
+
+Параметры JMX: `host`, `port`, `protocol`, `threads`, `rampUp`, `loops`,
+`thinkTimeMs`, `thinkTimeRangeMs`, `dataFile` задаются через `-Jимя=значение`.
+Увеличивая нагрузку, учитывайте очередь пула platform: response timeout 65 секунд
+позволяет увидеть и ошибки перегрузки. Этот смешанный пользовательский прогон
+не заменяет изолированное сравнение пропускной способности исполнителей.
+
+Результаты основного, короткого и отрицательного прогонов описаны в
+[reports/JMETER.md](reports/JMETER.md).
+
+Справка Apache: [Thread Group, CSV, JSON Assertion и таймеры](https://jmeter.apache.org/usermanual/component_reference.html),
+[запуск в CLI и HTML-отчёт](https://jmeter.apache.org/usermanual/get-started.html#non_gui).
+
 ## Измерение COUNT за 10 секунд
 
 Фактический адрес метрики: `/actuator/metrics/http.server.requests`.
