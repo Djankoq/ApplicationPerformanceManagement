@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.autoconfigure.actuate.observability.AutoConfigureObservability;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpStatus;
+import org.springframework.context.ApplicationContext;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.awaitility.Awaitility.await;
@@ -17,6 +18,14 @@ import static org.awaitility.Awaitility.await;
 class WorkIntegrationTest {
     @Autowired
     private TestRestTemplate http;
+
+    @Autowired
+    private ApplicationContext context;
+
+    @Test
+    void memoryLeakIsDisabledWithoutTheExplicitLabProfile() {
+        assertThat(context.getBeansOfType(MemoryLeakExperiment.class)).isEmpty();
+    }
 
     @Test
     void executesWorkOnTheRequestedThreadType() {

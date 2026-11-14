@@ -70,9 +70,9 @@ def main():
     p, v = baseline
     ratio = v["requests_per_second"] / p["requests_per_second"]
     lines = [
-        "# Результаты измерения пропускной способности и RED",
+        "# Результаты измерений APM: пропускная способность, RED и GC",
         "",
-        f"Выполнено: {document['started_utc']} — {document['finished_utc']} (UTC).",
+        f"Замер пропускной способности и RED: {document['started_utc']} — {document['finished_utc']} (UTC).",
         f"Среда клиента: {document['client_environment']}.",
         f"Prometheus {captured['prometheus_buildinfo']['data']['version']}; "
         f"Grafana OSS {captured['grafana_health']['version']}.",
@@ -207,7 +207,14 @@ def main():
             lines.append(f"| {probe['mode']} | {probe['status']} | "
                          f"{probe['elapsed_seconds']:.3f} | {probe['body']['virtual']} |")
         lines += ["", "[Исходные ответы долгих запросов](long-requests.json).", ""]
-    (output / "REPORT.md").write_text("\n".join(lines), encoding="utf-8")
+    report_path = output / "REPORT.md"
+    # Keep the independent GC lab when refreshing the RED measurements.
+    if report_path.exists():
+        previous = report_path.read_text(encoding="utf-8")
+        marker = "<!-- GC-EXPERIMENT -->"
+        if marker in previous:
+            lines += ["", marker + previous.split(marker, 1)[1]]
+    report_path.write_text("\n".join(lines), encoding="utf-8")
     print(f"Grafana {captured['grafana_health']['version']}, Prometheus target UP")
     print(f"Saved {output / 'monitoring.json'} and {output / 'REPORT.md'}")
     for evaluation in captured["evaluations"]:

@@ -155,7 +155,67 @@ python scripts/plot.py
 из свойств виртуальных потоков. Один прогон не заменяет статистическое
 исследование; параметры можно менять аргументами нагрузочного скрипта.
 
-## Проверки и источники
+## Утечка памяти и GC
+
+Сценарий включается только профилем `gc-leak`. Компонент
+`MemoryLeakExperiment` каждые 100 мс добавляет новый `byte[128 * 1024]`
+в статический `List<byte[]>`: номинально 1.25 МиБ/с без учёта заголовков
+объектов и списка. Сильные ссылки сохраняются до завершения JVM.
+В обычном запуске и в RED-замерах этот компонент отключён.
+
+Из корня проекта:
+
+```powershell
+$env:MAVEN_USER_HOME = "$PWD/.cache/maven-user"
+.\mvnw.cmd "-Dmaven.repo.local=$PWD/.cache/m2" --batch-mode --no-transfer-progress verify
+python scripts/gc_experiment.py
+python -m pip install --target .tools/python matplotlib==3.10.7
+python scripts/plot_gc.py
+```
+
+Скрипт запускает собранное приложение с G1, `-Xms128m -Xmx128m`,
+`-XX:+ExitOnOutOfMemoryError` и
+`-Xlog:gc*,safepoint:file=gc.log:time,uptime,level,tags:filecount=0`.
+Рабочий каталог JVM — `reports`, поэтому GC-лог находится в
+`reports/gc.log`. Порт эксперимента — `127.0.0.1:18080`; он должен быть свободен.
+Prometheus и Grafana для этого сценария не нужны.
+
+Цель — `OutOfMemoryError: Java heap space` примерно через 1–2 минуты.
+Ненулевой код завершения дочерней JVM при OOM ожидаем; Python-скрипт
+возвращает успех только при подтверждённом сценарии: OOM, Full GC,
+рост удерживаемых данных и 60–120 секунд до завершения.
+При превышении 150 секунд скрипт останавливает свою JVM и сообщает ошибку.
+Время зависит от компьютера и фоновой нагрузки.
+
+Повторный запуск заменяет артефакты именно этого GC-эксперимента:
+
+* `reports/gc.log` — исходные сообщения GC с UTC-смещением и uptime.
+* `reports/gc-application.log` — запуск Spring Boot и причина завершения.
+* `reports/heap.csv` — heap used/committed/max из `MemoryMXBean` и объём
+  удерживаемых массивов примерно раз в секунду; время — uptime JVM.
+* `reports/gc-experiment.json` — команда, версия Java, длительность,
+  код завершения, образцы heap и разобранные паузы GC.
+* `reports/gc-heap.png` — график heap, удерживаемых данных и памяти после GC.
+
+В строках `A M -> B M (128 M)` сравнивайте `B` между сборками:
+при утечке уровень памяти после GC растёт и даже Full GC в конце
+освобождает мало памяти. `M` в этих строках — МиБ, значения округлены
+до целых. Удерживаемые массивы остаются достижимыми, поэтому GC
+не может их удалить. Исправление для реального приложения — убрать
+неограниченное накопление или ограничить срок жизни/объём коллекции.
+
+График строится по фактическим измерениям JVM; это не снимок VisualVM.
+Опционально запустите VisualVM на той же машине и под тем же пользователем,
+подключитесь к PID из вывода скрипта и откройте Monitor → Heap.
+Не нажимайте Perform GC, если хотите сохранить исходную методику прогона.
+Результаты выполненного эксперимента добавлены в [REPORT.md](reports/REPORT.md).
+
+Источники для GC:
+
+* [Java 21: Unified Logging, `-Xlog` и параметры heap](https://docs.oracle.com/en/java/javase/21/docs/specs/man/java.html#enable-logging-with-the-jvm-unified-logging-framework).
+* [Java 21: G1, в том числе Full GC при нехватке heap](https://docs.oracle.com/en/java/javase/21/gctuning/garbage-first-g1-garbage-collector1.html).
+
+## Проверки RED и источники
 
 `mvnw verify` выполняет интеграционные проверки фактического типа потоков,
 роста COUNT, экспорта гистограммы, валидации входа и HTTP 503.
