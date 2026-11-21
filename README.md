@@ -1,6 +1,8 @@
 # Application Performance Management
 
 Учебный стенд Spring Boot 3.5.7 / Java 21 с Actuator, Prometheus и Grafana.
+[Отчёт по трём категориям производительности](reports/PERFORMANCE-REVIEW.md).
+
 Два метода выполняют одну блокирующую операцию, имитирующую ожидание внешнего I/O:
 
 | Метод | Исполнитель работы | По умолчанию |
